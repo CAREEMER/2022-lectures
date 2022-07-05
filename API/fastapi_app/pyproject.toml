@@ -8,6 +8,7 @@ authors = ["Rashid Mingazov <rashid.mingazov@mircod.com>"]
 python = "^3.9"
 fastapi = "^0.78.0"
 pydantic = "^1.9.1"
+uvicorn = "^0.18.2"
 
 [tool.poetry.dev-dependencies]
 
