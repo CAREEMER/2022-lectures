@@ -1,0 +1,5 @@
+*/.python-version
+/.idea/
+/.env.local
+/.python-version
+/charts/_local_values.yaml
