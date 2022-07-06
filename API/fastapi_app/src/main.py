@@ -4,8 +4,10 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 
-from api.v1 import auth, user
+from api.v1 import auth, note, user
 from core.config import app_config
+
+# 09e7d55c-092c-4d26-b0e7-19affc650a74
 
 app = FastAPI(
     title=f"Fastapi app - {app_config.ENVIRONMENT}",
@@ -16,6 +18,7 @@ app = FastAPI(
 )
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["auth"])
 app.include_router(user.router, prefix="/api/v1/user", tags=["user"])
+app.include_router(note.router, prefix="/api/v1/note", tags=["note"])
 
 
 if __name__ == "__main__":

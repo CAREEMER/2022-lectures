@@ -1,4 +1,4 @@
-from pydantic import BaseSettings
+from pydantic import BaseSettings, RedisDsn
 
 
 class Config(BaseSettings):
@@ -9,6 +9,10 @@ class Config(BaseSettings):
     DATABASE_USER: str = "fastapi_db"
     DATABASE_PASSWORD: str = "fastapi_db"
     DATABASE_NAME: str = "fastapi_db"
+
+    REDIS_DSN: RedisDsn = "redis://localhost:6350"
+
+    IDEMPOTENCY_KEY_PREFIX: str = "FASTAPI_IK"
 
     @property
     def DATABASE_URL(self):
